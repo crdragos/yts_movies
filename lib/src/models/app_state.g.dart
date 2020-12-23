@@ -11,16 +11,34 @@ class _$AppState extends AppState {
   final BuiltList<Movie> movies;
   @override
   final bool isLoading;
+  @override
+  final bool showFilters;
+  @override
+  final int nextPage;
+  @override
+  final String quality;
 
   factory _$AppState([void Function(AppStateBuilder) updates]) =>
       (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._({this.movies, this.isLoading}) : super._() {
+  _$AppState._(
+      {this.movies,
+      this.isLoading,
+      this.showFilters,
+      this.nextPage,
+      this.quality})
+      : super._() {
     if (movies == null) {
       throw new BuiltValueNullFieldError('AppState', 'movies');
     }
     if (isLoading == null) {
       throw new BuiltValueNullFieldError('AppState', 'isLoading');
+    }
+    if (showFilters == null) {
+      throw new BuiltValueNullFieldError('AppState', 'showFilters');
+    }
+    if (nextPage == null) {
+      throw new BuiltValueNullFieldError('AppState', 'nextPage');
     }
   }
 
@@ -36,19 +54,30 @@ class _$AppState extends AppState {
     if (identical(other, this)) return true;
     return other is AppState &&
         movies == other.movies &&
-        isLoading == other.isLoading;
+        isLoading == other.isLoading &&
+        showFilters == other.showFilters &&
+        nextPage == other.nextPage &&
+        quality == other.quality;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, movies.hashCode), isLoading.hashCode));
+    return $jf($jc(
+        $jc(
+            $jc($jc($jc(0, movies.hashCode), isLoading.hashCode),
+                showFilters.hashCode),
+            nextPage.hashCode),
+        quality.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AppState')
           ..add('movies', movies)
-          ..add('isLoading', isLoading))
+          ..add('isLoading', isLoading)
+          ..add('showFilters', showFilters)
+          ..add('nextPage', nextPage)
+          ..add('quality', quality))
         .toString();
   }
 }
@@ -64,12 +93,27 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   bool get isLoading => _$this._isLoading;
   set isLoading(bool isLoading) => _$this._isLoading = isLoading;
 
+  bool _showFilters;
+  bool get showFilters => _$this._showFilters;
+  set showFilters(bool showFilters) => _$this._showFilters = showFilters;
+
+  int _nextPage;
+  int get nextPage => _$this._nextPage;
+  set nextPage(int nextPage) => _$this._nextPage = nextPage;
+
+  String _quality;
+  String get quality => _$this._quality;
+  set quality(String quality) => _$this._quality = quality;
+
   AppStateBuilder();
 
   AppStateBuilder get _$this {
     if (_$v != null) {
       _movies = _$v.movies?.toBuilder();
       _isLoading = _$v.isLoading;
+      _showFilters = _$v.showFilters;
+      _nextPage = _$v.nextPage;
+      _quality = _$v.quality;
       _$v = null;
     }
     return this;
@@ -92,8 +136,13 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState build() {
     _$AppState _$result;
     try {
-      _$result =
-          _$v ?? new _$AppState._(movies: movies.build(), isLoading: isLoading);
+      _$result = _$v ??
+          new _$AppState._(
+              movies: movies.build(),
+              isLoading: isLoading,
+              showFilters: showFilters,
+              nextPage: nextPage,
+              quality: quality);
     } catch (_) {
       String _$failedField;
       try {
