@@ -16,6 +16,8 @@ abstract class Movie implements Built<Movie, MovieBuilder> {
 
   Movie._();
 
+  int get id;
+
   String get title;
 
   int get year;

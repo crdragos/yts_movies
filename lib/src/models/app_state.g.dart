@@ -14,19 +14,33 @@ class _$AppState extends AppState {
   @override
   final bool showFilters;
   @override
+  final bool cancelFilters;
+  @override
   final int nextPage;
   @override
+  final String orderBy;
+  @override
+  final String sortBy;
+  @override
   final String quality;
+  @override
+  final String genre;
+  @override
+  final int selectedMovie;
 
-  factory _$AppState([void Function(AppStateBuilder) updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder) updates]) => (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._(
       {this.movies,
       this.isLoading,
       this.showFilters,
+      this.cancelFilters,
       this.nextPage,
-      this.quality})
+      this.orderBy,
+      this.sortBy,
+      this.quality,
+      this.genre,
+      this.selectedMovie})
       : super._() {
     if (movies == null) {
       throw new BuiltValueNullFieldError('AppState', 'movies');
@@ -37,14 +51,22 @@ class _$AppState extends AppState {
     if (showFilters == null) {
       throw new BuiltValueNullFieldError('AppState', 'showFilters');
     }
+    if (cancelFilters == null) {
+      throw new BuiltValueNullFieldError('AppState', 'cancelFilters');
+    }
     if (nextPage == null) {
       throw new BuiltValueNullFieldError('AppState', 'nextPage');
+    }
+    if (orderBy == null) {
+      throw new BuiltValueNullFieldError('AppState', 'orderBy');
+    }
+    if (sortBy == null) {
+      throw new BuiltValueNullFieldError('AppState', 'sortBy');
     }
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -56,18 +78,31 @@ class _$AppState extends AppState {
         movies == other.movies &&
         isLoading == other.isLoading &&
         showFilters == other.showFilters &&
+        cancelFilters == other.cancelFilters &&
         nextPage == other.nextPage &&
-        quality == other.quality;
+        orderBy == other.orderBy &&
+        sortBy == other.sortBy &&
+        quality == other.quality &&
+        genre == other.genre &&
+        selectedMovie == other.selectedMovie;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, movies.hashCode), isLoading.hashCode),
-                showFilters.hashCode),
-            nextPage.hashCode),
-        quality.hashCode));
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc($jc($jc($jc(0, movies.hashCode), isLoading.hashCode), showFilters.hashCode),
+                                cancelFilters.hashCode),
+                            nextPage.hashCode),
+                        orderBy.hashCode),
+                    sortBy.hashCode),
+                quality.hashCode),
+            genre.hashCode),
+        selectedMovie.hashCode));
   }
 
   @override
@@ -76,8 +111,13 @@ class _$AppState extends AppState {
           ..add('movies', movies)
           ..add('isLoading', isLoading)
           ..add('showFilters', showFilters)
+          ..add('cancelFilters', cancelFilters)
           ..add('nextPage', nextPage)
-          ..add('quality', quality))
+          ..add('orderBy', orderBy)
+          ..add('sortBy', sortBy)
+          ..add('quality', quality)
+          ..add('genre', genre)
+          ..add('selectedMovie', selectedMovie))
         .toString();
   }
 }
@@ -86,24 +126,64 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState _$v;
 
   ListBuilder<Movie> _movies;
+
   ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
+
   set movies(ListBuilder<Movie> movies) => _$this._movies = movies;
 
   bool _isLoading;
+
   bool get isLoading => _$this._isLoading;
+
   set isLoading(bool isLoading) => _$this._isLoading = isLoading;
 
   bool _showFilters;
+
   bool get showFilters => _$this._showFilters;
+
   set showFilters(bool showFilters) => _$this._showFilters = showFilters;
 
+  bool _cancelFilters;
+
+  bool get cancelFilters => _$this._cancelFilters;
+
+  set cancelFilters(bool cancelFilters) => _$this._cancelFilters = cancelFilters;
+
   int _nextPage;
+
   int get nextPage => _$this._nextPage;
+
   set nextPage(int nextPage) => _$this._nextPage = nextPage;
 
+  String _orderBy;
+
+  String get orderBy => _$this._orderBy;
+
+  set orderBy(String orderBy) => _$this._orderBy = orderBy;
+
+  String _sortBy;
+
+  String get sortBy => _$this._sortBy;
+
+  set sortBy(String sortBy) => _$this._sortBy = sortBy;
+
   String _quality;
+
   String get quality => _$this._quality;
+
   set quality(String quality) => _$this._quality = quality;
+
+  String _genre;
+
+  String get genre => _$this._genre;
+
+  set genre(String genre) => _$this._genre = genre;
+
+  int _selectedMovie;
+
+  int get selectedMovie => _$this._selectedMovie;
+
+  set selectedMovie(int selectedMovie) => _$this._selectedMovie = selectedMovie;
 
   AppStateBuilder();
 
@@ -112,8 +192,13 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _movies = _$v.movies?.toBuilder();
       _isLoading = _$v.isLoading;
       _showFilters = _$v.showFilters;
+      _cancelFilters = _$v.cancelFilters;
       _nextPage = _$v.nextPage;
+      _orderBy = _$v.orderBy;
+      _sortBy = _$v.sortBy;
       _quality = _$v.quality;
+      _genre = _$v.genre;
+      _selectedMovie = _$v.selectedMovie;
       _$v = null;
     }
     return this;
@@ -141,16 +226,20 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
               movies: movies.build(),
               isLoading: isLoading,
               showFilters: showFilters,
+              cancelFilters: cancelFilters,
               nextPage: nextPage,
-              quality: quality);
+              orderBy: orderBy,
+              sortBy: sortBy,
+              quality: quality,
+              genre: genre,
+              selectedMovie: selectedMovie);
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'movies';
         movies.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }

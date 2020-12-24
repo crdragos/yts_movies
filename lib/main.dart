@@ -8,6 +8,7 @@ import 'package:yts_movies/src/data/yts_api.dart';
 import 'package:yts_movies/src/middleware/app_middleware.dart';
 import 'package:yts_movies/src/models/app_state.dart';
 import 'package:yts_movies/src/presentation/home_page.dart';
+import 'package:yts_movies/src/presentation/movie_detail.dart';
 import 'package:yts_movies/src/reducer/reducer.dart';
 
 void main() {
@@ -35,8 +36,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
       store: store,
-      child: const MaterialApp(
-        home: HomePage(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const HomePage(),
+        routes: <String, WidgetBuilder>{
+          '/movieDetail': (BuildContext context) {
+            return MovieDetail();
+          }
+        },
       ),
     );
   }

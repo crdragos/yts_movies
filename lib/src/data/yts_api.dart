@@ -11,7 +11,7 @@ class YtsApi {
 
   final Client _client;
 
-  Future<List<Movie>> getMovies(int nextPage, String quality) async {
+  Future<List<Movie>> getMovies(int nextPage, String quality, String genre, String orderBy, String sortBy) async {
     final Uri url = Uri(
       scheme: 'https',
       host: 'yts.mx',
@@ -19,7 +19,10 @@ class YtsApi {
       queryParameters: <String, String>{
         'limit': '50',
         'page': '$nextPage',
-        if (quality != null) 'quality': '$quality',
+        if (quality != null) 'quality': quality,
+        if (genre != null) 'genre': genre,
+        'order_by': orderBy,
+        'sort_by': sortBy,
       },
     );
 
