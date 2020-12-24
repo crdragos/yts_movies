@@ -34,15 +34,13 @@ mixin _$CancelFilters {
 
 /// @nodoc
 abstract class $CancelFiltersCopyWith<$Res> {
-  factory $CancelFiltersCopyWith(
-          CancelFilters value, $Res Function(CancelFilters) then) =
+  factory $CancelFiltersCopyWith(CancelFilters value, $Res Function(CancelFilters) then) =
       _$CancelFiltersCopyWithImpl<$Res>;
   $Res call({bool cancelFilters});
 }
 
 /// @nodoc
-class _$CancelFiltersCopyWithImpl<$Res>
-    implements $CancelFiltersCopyWith<$Res> {
+class _$CancelFiltersCopyWithImpl<$Res> implements $CancelFiltersCopyWith<$Res> {
   _$CancelFiltersCopyWithImpl(this._value, this._then);
 
   final CancelFilters _value;
@@ -54,29 +52,23 @@ class _$CancelFiltersCopyWithImpl<$Res>
     Object cancelFilters = freezed,
   }) {
     return _then(_value.copyWith(
-      cancelFilters: cancelFilters == freezed
-          ? _value.cancelFilters
-          : cancelFilters as bool,
+      cancelFilters: cancelFilters == freezed ? _value.cancelFilters : cancelFilters as bool,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$CancelFiltersCopyWith<$Res>
-    implements $CancelFiltersCopyWith<$Res> {
-  factory _$CancelFiltersCopyWith(
-          _CancelFilters value, $Res Function(_CancelFilters) then) =
+abstract class _$CancelFiltersCopyWith<$Res> implements $CancelFiltersCopyWith<$Res> {
+  factory _$CancelFiltersCopyWith(_CancelFilters value, $Res Function(_CancelFilters) then) =
       __$CancelFiltersCopyWithImpl<$Res>;
   @override
   $Res call({bool cancelFilters});
 }
 
 /// @nodoc
-class __$CancelFiltersCopyWithImpl<$Res>
-    extends _$CancelFiltersCopyWithImpl<$Res>
+class __$CancelFiltersCopyWithImpl<$Res> extends _$CancelFiltersCopyWithImpl<$Res>
     implements _$CancelFiltersCopyWith<$Res> {
-  __$CancelFiltersCopyWithImpl(
-      _CancelFilters _value, $Res Function(_CancelFilters) _then)
+  __$CancelFiltersCopyWithImpl(_CancelFilters _value, $Res Function(_CancelFilters) _then)
       : super(_value, (v) => _then(v as _CancelFilters));
 
   @override
@@ -109,13 +101,11 @@ class _$_CancelFilters implements _CancelFilters {
     return identical(this, other) ||
         (other is _CancelFilters &&
             (identical(other.cancelFilters, cancelFilters) ||
-                const DeepCollectionEquality()
-                    .equals(other.cancelFilters, cancelFilters)));
+                const DeepCollectionEquality().equals(other.cancelFilters, cancelFilters)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(cancelFilters);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(cancelFilters);
 
   @override
   _$CancelFiltersCopyWith<_CancelFilters> get copyWith =>

@@ -34,9 +34,7 @@ mixin _$ShowFilters {
 
 /// @nodoc
 abstract class $ShowFiltersCopyWith<$Res> {
-  factory $ShowFiltersCopyWith(
-          ShowFilters value, $Res Function(ShowFilters) then) =
-      _$ShowFiltersCopyWithImpl<$Res>;
+  factory $ShowFiltersCopyWith(ShowFilters value, $Res Function(ShowFilters) then) = _$ShowFiltersCopyWithImpl<$Res>;
   $Res call({bool showFilters});
 }
 
@@ -53,27 +51,22 @@ class _$ShowFiltersCopyWithImpl<$Res> implements $ShowFiltersCopyWith<$Res> {
     Object showFilters = freezed,
   }) {
     return _then(_value.copyWith(
-      showFilters:
-          showFilters == freezed ? _value.showFilters : showFilters as bool,
+      showFilters: showFilters == freezed ? _value.showFilters : showFilters as bool,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$ShowFiltersCopyWith<$Res>
-    implements $ShowFiltersCopyWith<$Res> {
-  factory _$ShowFiltersCopyWith(
-          _ShowFilters value, $Res Function(_ShowFilters) then) =
+abstract class _$ShowFiltersCopyWith<$Res> implements $ShowFiltersCopyWith<$Res> {
+  factory _$ShowFiltersCopyWith(_ShowFilters value, $Res Function(_ShowFilters) then) =
       __$ShowFiltersCopyWithImpl<$Res>;
   @override
   $Res call({bool showFilters});
 }
 
 /// @nodoc
-class __$ShowFiltersCopyWithImpl<$Res> extends _$ShowFiltersCopyWithImpl<$Res>
-    implements _$ShowFiltersCopyWith<$Res> {
-  __$ShowFiltersCopyWithImpl(
-      _ShowFilters _value, $Res Function(_ShowFilters) _then)
+class __$ShowFiltersCopyWithImpl<$Res> extends _$ShowFiltersCopyWithImpl<$Res> implements _$ShowFiltersCopyWith<$Res> {
+  __$ShowFiltersCopyWithImpl(_ShowFilters _value, $Res Function(_ShowFilters) _then)
       : super(_value, (v) => _then(v as _ShowFilters));
 
   @override
@@ -106,17 +99,14 @@ class _$_ShowFilters implements _ShowFilters {
     return identical(this, other) ||
         (other is _ShowFilters &&
             (identical(other.showFilters, showFilters) ||
-                const DeepCollectionEquality()
-                    .equals(other.showFilters, showFilters)));
+                const DeepCollectionEquality().equals(other.showFilters, showFilters)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(showFilters);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(showFilters);
 
   @override
-  _$ShowFiltersCopyWith<_ShowFilters> get copyWith =>
-      __$ShowFiltersCopyWithImpl<_ShowFilters>(this, _$identity);
+  _$ShowFiltersCopyWith<_ShowFilters> get copyWith => __$ShowFiltersCopyWithImpl<_ShowFilters>(this, _$identity);
 }
 
 abstract class _ShowFilters implements ShowFilters {

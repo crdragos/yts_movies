@@ -34,8 +34,7 @@ mixin _$UpdateSortBy {
 
 /// @nodoc
 abstract class $UpdateSortByCopyWith<$Res> {
-  factory $UpdateSortByCopyWith(
-          UpdateSortBy value, $Res Function(UpdateSortBy) then) =
+  factory $UpdateSortByCopyWith(UpdateSortBy value, $Res Function(UpdateSortBy) then) =
       _$UpdateSortByCopyWithImpl<$Res>;
   $Res call({String sortBy});
 }
@@ -59,10 +58,8 @@ class _$UpdateSortByCopyWithImpl<$Res> implements $UpdateSortByCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UpdateSortByCopyWith<$Res>
-    implements $UpdateSortByCopyWith<$Res> {
-  factory _$UpdateSortByCopyWith(
-          _UpdateSortBy value, $Res Function(_UpdateSortBy) then) =
+abstract class _$UpdateSortByCopyWith<$Res> implements $UpdateSortByCopyWith<$Res> {
+  factory _$UpdateSortByCopyWith(_UpdateSortBy value, $Res Function(_UpdateSortBy) then) =
       __$UpdateSortByCopyWithImpl<$Res>;
   @override
   $Res call({String sortBy});
@@ -71,8 +68,7 @@ abstract class _$UpdateSortByCopyWith<$Res>
 /// @nodoc
 class __$UpdateSortByCopyWithImpl<$Res> extends _$UpdateSortByCopyWithImpl<$Res>
     implements _$UpdateSortByCopyWith<$Res> {
-  __$UpdateSortByCopyWithImpl(
-      _UpdateSortBy _value, $Res Function(_UpdateSortBy) _then)
+  __$UpdateSortByCopyWithImpl(_UpdateSortBy _value, $Res Function(_UpdateSortBy) _then)
       : super(_value, (v) => _then(v as _UpdateSortBy));
 
   @override
@@ -104,17 +100,14 @@ class _$_UpdateSortBy implements _UpdateSortBy {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UpdateSortBy &&
-            (identical(other.sortBy, sortBy) ||
-                const DeepCollectionEquality().equals(other.sortBy, sortBy)));
+            (identical(other.sortBy, sortBy) || const DeepCollectionEquality().equals(other.sortBy, sortBy)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(sortBy);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(sortBy);
 
   @override
-  _$UpdateSortByCopyWith<_UpdateSortBy> get copyWith =>
-      __$UpdateSortByCopyWithImpl<_UpdateSortBy>(this, _$identity);
+  _$UpdateSortByCopyWith<_UpdateSortBy> get copyWith => __$UpdateSortByCopyWithImpl<_UpdateSortBy>(this, _$identity);
 }
 
 abstract class _UpdateSortBy implements UpdateSortBy {
